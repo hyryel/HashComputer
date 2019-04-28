@@ -4,6 +4,9 @@
         <Identity Id="HashComputer.79d0440b-52ee-4489-a060-95165212ce01" Version="1.0" Language="fr-FR" Publisher="Nicolas Pernot" />
         <DisplayName>Hash Computer</DisplayName>
         <Description xml:space="preserve">Compute HASH from files</Description>
+        <MoreInfo>https://github.com/hyryel/HashComputer</MoreInfo>
+        <License>LICENSE</License>
+        <GettingStartedGuide>https://github.com/hyryel/HashComputer</GettingStartedGuide>
         <Icon>Resources\security.png</Icon>
         <PreviewImage>Resources\security.png</PreviewImage>
         <Tags>hash compute;sha-1; sha-256; sha-512; md5</Tags>
