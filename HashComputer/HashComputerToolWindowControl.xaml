@@ -1,0 +1,38 @@
+﻿<UserControl x:Class="HashComputer.HashComputerToolWindowControl"
+             xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+             xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+             xmlns:vsshell="clr-namespace:Microsoft.VisualStudio.Shell;assembly=Microsoft.VisualStudio.Shell.15.0"
+             Background="{DynamicResource {x:Static vsshell:VsBrushes.WindowKey}}"
+             Foreground="{DynamicResource {x:Static vsshell:VsBrushes.WindowTextKey}}"
+             mc:Ignorable="d"
+             d:DesignHeight="300" d:DesignWidth="300"
+             Name="HashComputerToolWindow">
+    <Grid>
+        <Grid.RowDefinitions>
+            <RowDefinition Height="24"/>
+            <RowDefinition Height="24"/>
+            <RowDefinition Height="24"/>
+            <RowDefinition Height="24"/>
+            <RowDefinition Height="24"/>
+            <RowDefinition Height="24"/>
+            <RowDefinition Height="24*"/>
+        </Grid.RowDefinitions>
+        <TextBlock Grid.Row="0" Text="[Select file]" x:Name="lblSelectFile" />
+        <DockPanel Grid.Row="1" LastChildFill="True">
+            <Button x:Name="btnPickFile" Content="Browse..." DockPanel.Dock="Right" Padding="5,0" Click="BtnPickFile_Click" />
+            <TextBox x:Name="tbxFileName" IsReadOnly="True" />
+        </DockPanel>
+        <TextBlock Grid.Row="2" Text="[Select HASH algorithm]" x:Name="lblHashAlgorithm" />
+        <ComboBox Grid.Row="3" VerticalAlignment="Stretch" HorizontalAlignment="Stretch" x:Name="lstHashAlgorithm" >
+            <ComboBoxItem Content="SHA-1" IsSelected="true" />
+            <ComboBoxItem Content="SHA-256" />
+            <ComboBoxItem Content="SHA-512" />
+            <ComboBoxItem Content="MD5" />
+        </ComboBox>
+        <Button Grid.Row="4" Content="Compute Hash" Width="120" x:Name="btnComputeHash" Click="BtnComputeHash_Click" IsEnabled="False" />
+        <TextBlock Grid.Row="5" Text="Hash" />
+        <TextBox x:Name="tbxHash" Grid.Row="6" TextWrapping="Wrap" />
+    </Grid>
+</UserControl>
